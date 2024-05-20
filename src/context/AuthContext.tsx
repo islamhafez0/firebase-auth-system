@@ -35,11 +35,7 @@ export const FirebaseAuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user);
-        console.log("User", user);
-      } else {
-        setUser(null);
-        console.log("No user");
+        setUser(user ? user : null);
       }
     });
     return () => {
@@ -88,6 +84,7 @@ export const FirebaseAuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
     }
   };
+
   const logOut = async (): Promise<boolean> => {
     try {
       setLoading(true);

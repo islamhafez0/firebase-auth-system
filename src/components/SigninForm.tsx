@@ -34,7 +34,7 @@ const SigninForm = () => {
       <form onSubmit={handleSubmit}>
         <h2>Sign in</h2>
         {signinInputs.map(({ id, label, name, type }) => (
-          <div>
+          <div key={id}>
             <label htmlFor={id}>{label}</label>
             <input
               onChange={handleChange}
