@@ -2,7 +2,6 @@ import { useAuthContext } from "../hooks/useAuthContext";
 
 const Home = () => {
   const { user } = useAuthContext();
-  console.log(user?.metadata);
   return (
     <>
       <div className="home">

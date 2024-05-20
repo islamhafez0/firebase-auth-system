@@ -28,7 +28,6 @@ const SigninForm = () => {
       navigate("/");
     }
   };
-  console.log(error);
   return (
     <div className="formWrapper">
       <form onSubmit={handleSubmit}>

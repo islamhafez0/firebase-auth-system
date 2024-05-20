@@ -8,7 +8,6 @@ const Header = () => {
     if (loggedOut) {
       navigate("/sign_in");
     }
-    console.log("Logged out");
   };
   return (
     <header className="header">
