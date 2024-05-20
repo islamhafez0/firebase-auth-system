@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 const Header = () => {
   const { isAuth, loading, logOut } = useAuthContext();
-  const handleLogoout = () => {
-    logOut();
+  const navigate = useNavigate();
+  const handleLogoout = async () => {
+    const loggedOut = await logOut();
+    if (loggedOut) {
+      navigate("/sign_in");
+    }
     console.log("Logged out");
   };
   return (
